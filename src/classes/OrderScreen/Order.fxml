@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="801.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classes.OrderScreen.OrderController">
+   <children>
+      <AnchorPane layoutX="41.0" layoutY="41.0" prefHeight="102.0" prefWidth="1024.0" style="-fx-background-color: #0099ff#0099ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="79.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../libs/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="111.0" layoutY="25.0" text="DKDiners POS Reservation System" textFill="WHITE">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="musicButton" layoutX="925.0" layoutY="3.0" onAction="#playMusic" text="Play Music" textFill="WHITE" />
+         </children></AnchorPane>
+      <StackPane layoutX="241.0" layoutY="101.0" prefHeight="626.0" prefWidth="721.0" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="101.0">
+         <children>
+            <JFXTabPane prefHeight="549.0" prefWidth="717.0">
+               <tabs>
+                  <Tab text="Starters">
+                    <content>
+                      <AnchorPane fx:id="tab1" minHeight="0.0" minWidth="0.0" prefHeight="626.0" prefWidth="721.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Main Course">
+                    <content>
+                      <AnchorPane fx:id="tab2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="750.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Salads">
+                    <content>
+                      <AnchorPane fx:id="tab3" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Drinks">
+                    <content>
+                      <AnchorPane fx:id="tab4" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Dessert">
+                    <content>
+                      <AnchorPane fx:id="tab5" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </StackPane>
+      <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="727.0" onAction="#finalizeOrder" prefHeight="41.0" prefWidth="107.0" text="Finalize" textFill="#289e13">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXListView fx:id="cartView" layoutY="101.0" prefHeight="518.0" prefWidth="304.0" />
+      <VBox layoutX="21.0" layoutY="640.0" prefHeight="86.0" prefWidth="230.0">
+         <children>
+            <HBox prefHeight="25.0" prefWidth="151.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="107.0" text="Subtotal: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subtotal" prefHeight="23.0" prefWidth="120.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="23.0" prefWidth="151.0">
+               <children>
+                  <Label prefHeight="22.0" prefWidth="107.0" text="HST @ 13%:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hst" prefHeight="22.0" prefWidth="120.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="42.0" prefWidth="208.0">
+               <children>
+                  <Label prefHeight="29.0" prefWidth="107.0" text="Total: ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="total" prefHeight="29.0" prefWidth="124.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Line endX="140.0" layoutX="115.0" layoutY="634.0" startX="-100.0" />
+      <Line endX="52.0" layoutX="203.0" layoutY="720.0" startX="-189.0" />
+      <Line endX="100.0" layoutX="-86.0" layoutY="634.0" startX="99.5" startY="85.5" />
+      <JFXButton alignment="CENTER_RIGHT" layoutX="129.0" layoutY="727.0" onAction="#cancelOrder" prefHeight="41.0" prefWidth="100.0" text="Cancel" textFill="#ae0f0f">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </JFXButton>
+      <Line endX="-100.5" endY="18.5" layoutX="356.0" layoutY="701.0" startX="-101.5" startY="-63.5" />
+   </children>
+
+</AnchorPane>
